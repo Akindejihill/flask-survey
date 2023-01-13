@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} {{session["title"]}} {% endblock %}
+
+{% block content %} 
+<p><h2>Finnished!</h2></p> 
+<p>Thank you so much for completing the survey.</p>
+
+<p>Your responses were:</p>
+{% for response in session["responses"] %}
+    {{response}}<br>
+{% endfor %}
+
+{% endblock %}
+

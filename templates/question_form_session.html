@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %} 
+<p><h2>{{title}}</h2></p> 
+<p>Instructions - {{session["instructions"]}}</p>
+
+<form action="/questions/post" method="POST">
+    <label for="question">{{session["next_question_num"] + 1}}: {{session["current_question"]}}</label><br>
+    <select required size="2" id="question" name="response">
+        {% for choice in session["choices"] %}
+            <option value="{{choice}}">{{choice}}</option>
+        {% endfor %}
+    </select>
+    <!-- <input type="hidden" name="answer_num" value="{{q_num}}"><br> -->
+    <input type="submit" class="button" value="Next Question ➡">
+</form>
+
+
+
+
+{% endblock %}
+

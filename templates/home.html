@@ -5,8 +5,11 @@
 {% block content %} 
 <p><h2>This is the: {{title}} </h2></p> 
 <p>Instructions - {{instructions}}</p>
-<a class="button" href="/questions/0">Let's Begin!</a>
-
+<!-- <a class="button" href="/questions/get/0">Let's Begin!</a> -->
+<!-- <a class="button" id="button" >Let's Begin!</a> -->
+<form action="/questions/session" method="POST">
+    <input type="submit" class="button" id="button" value="Let's Begin!">
+</form>
 
 {% endblock %}
 
